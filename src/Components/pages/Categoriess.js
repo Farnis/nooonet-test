@@ -38,7 +38,7 @@ export default class Categoriess extends React.Component {
             }
         })
             .then((result) => {
-                console.log(result.data.Data);
+                 // console.log(result.data.Data);
                 this.setState({
                     SansList: result.data.Data.SansList,
                     BreadList: result.data.Data.BreadList,
@@ -137,16 +137,34 @@ export default class Categoriess extends React.Component {
                                 fontFamily: 'IRANSans',
                                 fontSize: '12px',
                                 width: '100%',
-                                textAlign:'right',
+                                textAlign: 'right',
                             }}>اطلاعات دقیق
                                 برای سفارش</label>
-                            <input style={{border: 'none', direction: 'rtl', fontFamily: 'IRANSans', fontSize: '12px'}}
+                            <input style={{
+                                border: 'none',
+                                direction: 'rtl',
+                                fontFamily: 'IRANSans',
+                                fontSize: '12px',
+                                outline: '0'
+                            }}
                                    placeholder="نشانی دقیق" type="text"
                                    className="form-control"/>
-                            <input style={{border: 'none', direction: 'rtl', fontFamily: 'IRANSans', fontSize: '12px'}}
+                            <input style={{
+                                border: 'none',
+                                direction: 'rtl',
+                                fontFamily: 'IRANSans',
+                                fontSize: '12px',
+                                outline: '0'
+                            }}
                                    placeholder="پلاک | واحد" type="password"
                                    className="form-control"/>
-                            <input style={{border: 'none', direction: 'rtl', fontFamily: 'IRANSans', fontSize: '12px'}}
+                            <input style={{
+                                border: 'none',
+                                direction: 'rtl',
+                                fontFamily: 'IRANSans',
+                                fontSize: '12px',
+                                outline: '0'
+                            }}
                                    placeholder="شماره اضطراری" type="password"
                                    className="form-control" id="pwd"/>
                             <button className="btn btn-success">ثبت سفارش</button>

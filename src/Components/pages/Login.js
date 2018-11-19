@@ -79,8 +79,6 @@ class Login extends React.Component {
             return <Redirect push to={'/VerifyCode'}/>
         }
         return (
-
-
             <div className="row">
                 <form className="col-lg-4" id="Login">
                     <div className="forgot">
@@ -93,7 +91,7 @@ class Login extends React.Component {
                         background: 'black',
                         marginBottom: '2%',
                         marginLeft: '25%'
-                    }}/>
+                      }}/>
                     <div className="form-group">
                         <label>Mobile Number:</label>
                         {/*input*/}
