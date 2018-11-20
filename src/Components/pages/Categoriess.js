@@ -20,6 +20,7 @@ export default class Categoriess extends React.Component {
             LocationList: [],
             LatitudeAddress: [],
             LongitudeAddress: [],
+            shown: true,
 
 
         }
@@ -38,7 +39,7 @@ export default class Categoriess extends React.Component {
             }
         })
             .then((result) => {
-                 // console.log(result.data.Data);
+                // console.log(result.data.Data);
                 this.setState({
                     SansList: result.data.Data.SansList,
                     BreadList: result.data.Data.BreadList,
@@ -61,8 +62,19 @@ export default class Categoriess extends React.Component {
         });
     }
 
+    toggle() {
+        this.setState({
+            shown: !this.state.shown
+        });
+    }
 
     render() {
+        const shown = {
+            display: this.state.shown ? "block" : "none"
+        };
+        const hidden = {
+            display: this.state.shown ? "none" : "block"
+        };
         const MyMapComponent = compose(
             withProps({
                 googleMapURL:
@@ -123,11 +135,14 @@ export default class Categoriess extends React.Component {
 
                 </div>
                 <div className="col-lg-5">
-                    {this.state.SansList.map((SansList, index) => <DetailPlace SansList={SansList} key={index}/>)}
-                    <br/>
-                    {this.state.BreadList.map((BreadList, index) => <BredLists BreadList={BreadList} key={index}/>)}
+                    <div onClick={this.toggle.bind(this)}>
+                        {this.state.SansList.map((SansList, index) => <DetailPlace SansList={SansList} key={index}/>)}
+                    </div>
+                    <br/><br/>
+                    <div style={ hidden }>
+                        {this.state.BreadList.map((BreadList, index) => <BredLists BreadList={BreadList} key={index}/>)}
+                    </div>
                 </div>
-
                 <div className="col-lg-4 card" style={{width: '18rem', height: '550px'}}>
                     <MyMapComponent/>
                     <div className="card-body">

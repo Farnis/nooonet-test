@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-
+// import toggle from './DetailPlaceView'
 export default class BredLists extends Component {
 
     constructor(props) {
@@ -108,3 +108,4 @@ export default class BredLists extends Component {
         );
     }
 }
+// }

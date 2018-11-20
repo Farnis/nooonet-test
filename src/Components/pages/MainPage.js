@@ -56,8 +56,4 @@ export default class MainPage extends React.Component {
 }
 
 
-// // <div>
-//     {/*{this.state.Categories.map((Categories, index) => <Product Categories={Categories} key={index}/>)}*/}
-// {/*</div>*/}
-
 
