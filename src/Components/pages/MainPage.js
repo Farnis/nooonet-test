@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios/index";
 import GetToken from '../../lib/functionTOken'
 import Product from "../view/ProductView";
+import {Link} from "react-router-dom";
+
 
 export default class MainPage extends React.Component {
     constructor(props) {
@@ -44,16 +46,51 @@ export default class MainPage extends React.Component {
     render() {
 
         return (
-            <div style={{backgroundColor: '#e9c020'}} className="row rtl">
-                {this.state.Categories.map((Categories, index,) => <Product Categories={Categories} key={index}/>)}
-                {this.state.Location.map((Location, index) => <Product Categories={Location} key={index}/>)}
 
+            <div style={{backgroundColor: '#e9c020'}}>
+                <div className="container-fluid">
+                    <div style={{padding: '0', direction: 'rtl',}} className="row col-lg-12 ">
+                        <div className="navbar navbar-expand-lg navbar-light">
+                            <ul style={{fontFamily: 'IRANSans'}} className="navbar-nav">
+                                <li className="nav-item active">
+                                    <Link style={{color: '#fff'}} className="nav-link" to="#">تمامی موارد <span
+                                        className="sr-only">(current)</span></Link>
+                                </li>
+                                <li className="nav-item active">
+                                    <Link style={{color: '#fff'}} className="nav-link" to="#"> فانتزی و شیرینی<span
+                                        className="sr-only">(current)</span></Link>
+                                </li>
+                                <li className="nav-item active">
+                                    <Link style={{color: '#fff'}} className="nav-link" to="#">نان تافتون<span
+                                        className="sr-only">(current)</span></Link>
+                                </li>
+                                <li className="nav-item active">
+                                    <Link style={{color: '#fff'}} className="nav-link" to="#">نان بربری<span
+                                        className="sr-only">(current)</span></Link>
+                                </li>
+                                <li className="nav-item active">
+                                    <Link style={{color: '#fff'}} className="nav-link" to="#">نان لواش<span
+                                        className="sr-only">(current)</span></Link>
+                                </li>
+                                <li className="nav-item active">
+                                    <Link style={{color: '#fff'}} className="nav-link" to="#">نان سنگگ<span
+                                        className="sr-only">(current)</span></Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div className="row col-lg-12">
+                        {this.state.Categories.map((Categories, index,) => <Product Categories={Categories}
+                                                                                    key={index}/>)}
+                        {this.state.Location.map((Location, index) => <Product Categories={Location} key={index}/>)}
 
+                    </div>
+                </div>
             </div>
 
         );
     }
 }
-
 
 

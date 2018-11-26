@@ -6,7 +6,11 @@ import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css" ;
 import MainPage from "./Components/pages/MainPage";
 import Categoriess from "./Components/pages/Categoriess";
-// import BaseView from "./Components/view/BaseView";
+import Header from "./Components/NavHeader/Header";
+import MyAccount from "./Components/NavHeader/MyAccount";
+import MyOrder from "./Components/NavHeader/MyOrder";
+import SendReports from "./Components/NavHeader/SendReports";
+import AboutUs from "./Components/NavHeader/AboutUs";
 
 
 export default class App extends React.Component {
@@ -47,11 +51,15 @@ export default class App extends React.Component {
         return (
             <Router>
                 <div>
-
+                    <Header/>
                     <Route exact path="/" component={Login}/>
                     <Route path="/VerifyCode" component={VerifyCode}/>
                     <Route path='/MainPage' component={MainPage} isAuthenticated={this.state.isAuthenticated}/>
                     <Route path="/Categoriess/:Id" component={Categoriess}/>
+                    <Route path="/MyAccount" component={MyAccount}/>
+                    <Route path="/MyOrder" component={MyOrder}/>
+                    <Route path="/SendReports" component={SendReports}/>
+                    <Route path="/AboutUs" component={AboutUs}/>
 
 
                 </div>

@@ -9,7 +9,6 @@ export default class BredLists extends Component {
             countBread: 0,
             CountsCard: 0,
             breadId: props.BreadList['Id'],
-
         }
     }
 
@@ -29,13 +28,13 @@ export default class BredLists extends Component {
 
         let inputs = this.state.BreadList;
         if ('countBread' + inputs['Id'] == event.target.id) {
-            let Counts=inputs['Count'] == '' || inputs['Count'] == null ? 0 : inputs['Count'];
-            if(inputs['Count'] == '' || inputs['Count'] == null){
+            let Counts = inputs['Count'] == '' || inputs['Count'] == null ? 0 : inputs['Count'];
+            if (inputs['Count'] == '' || inputs['Count'] == null) {
                 this.setState({BreadListFinal: inputs, CountsCard: this.state.CountsCard});
-            }else{
+            } else {
                 inputs['Count'] = Counts - 1;
                 inputs['BreadId'] = inputs['Id'];
-                this.setState({BreadListFinal: inputs, CountsCard: this.state.CountsCard -1});
+                this.setState({BreadListFinal: inputs, CountsCard: this.state.CountsCard - 1});
             }
         }
 

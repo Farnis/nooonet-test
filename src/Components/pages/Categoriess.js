@@ -69,9 +69,7 @@ export default class Categoriess extends React.Component {
     }
 
     render() {
-        const shown = {
-            display: this.state.shown ? "block" : "none"
-        };
+
         const hidden = {
             display: this.state.shown ? "none" : "block"
         };
@@ -130,59 +128,64 @@ export default class Categoriess extends React.Component {
 
 
         return (
-            <div className="row col-lg-12">
-                <div className="col-lg-2">
+            <div className="col-lg-12">
+                <div className="row">
 
-                </div>
-                <div className="col-lg-5">
-                    <div onClick={this.toggle.bind(this)}>
-                        {this.state.SansList.map((SansList, index) => <DetailPlace SansList={SansList} key={index}/>)}
+                    <div className="col-lg-2">
+
                     </div>
-                    <br/><br/>
-                    <div style={ hidden }>
-                        {this.state.BreadList.map((BreadList, index) => <BredLists BreadList={BreadList} key={index}/>)}
+                    <div className="col-lg-5">
+                        <div onClick={this.toggle.bind(this)}>
+                            {this.state.SansList.map((SansList, index) => <DetailPlace SansList={SansList}
+                                                                                       key={index}/>)}
+                        </div>
+                        <br/><br/>
+                        <div style={hidden}>
+                            {this.state.BreadList.map((BreadList, index) => <BredLists BreadList={BreadList}
+                                                                                       key={index}/>)}
+                        </div>
                     </div>
-                </div>
-                <div className="col-lg-4 card" style={{width: '18rem', height: '550px'}}>
-                    <MyMapComponent/>
-                    <div className="card-body">
-                        <div className="form-group">
-                            <label style={{
-                                direction: 'rtl',
-                                fontFamily: 'IRANSans',
-                                fontSize: '12px',
-                                width: '100%',
-                                textAlign: 'right',
-                            }}>اطلاعات دقیق
-                                برای سفارش</label>
-                            <input style={{
-                                border: 'none',
-                                direction: 'rtl',
-                                fontFamily: 'IRANSans',
-                                fontSize: '12px',
-                                outline: '0'
-                            }}
-                                   placeholder="نشانی دقیق" type="text"
-                                   className="form-control"/>
-                            <input style={{
-                                border: 'none',
-                                direction: 'rtl',
-                                fontFamily: 'IRANSans',
-                                fontSize: '12px',
-                                outline: '0'
-                            }}
-                                   placeholder="پلاک | واحد" type="password"
-                                   className="form-control"/>
-                            <input style={{
-                                border: 'none',
-                                direction: 'rtl',
-                                fontFamily: 'IRANSans',
-                                fontSize: '12px',
-                                outline: '0'
-                            }}
-                                   placeholder="شماره اضطراری" type="password"
-                                   className="form-control" id="pwd"/>
-                            <button className="btn btn-success">ثبت سفارش</button>
+                    <div className="col-lg-4 card" style={{width: '18rem', height: '550px'}}>
+                        <MyMapComponent/>
+                        <div className="card-body">
+                            <div className="form-group">
+                                <label style={{
+                                    direction: 'rtl',
+                                    fontFamily: 'IRANSans',
+                                    fontSize: '12px',
+                                    width: '100%',
+                                    textAlign: 'right',
+                                }}>اطلاعات دقیق
+                                    برای سفارش</label>
+                                <input style={{
+                                    border: 'none',
+                                    direction: 'rtl',
+                                    fontFamily: 'IRANSans',
+                                    fontSize: '12px',
+                                    outline: '0'
+                                }}
+                                       placeholder="نشانی دقیق" type="text"
+                                       className="form-control"/>
+                                <input style={{
+                                    border: 'none',
+                                    direction: 'rtl',
+                                    fontFamily: 'IRANSans',
+                                    fontSize: '12px',
+                                    outline: '0'
+                                }}
+                                       placeholder="پلاک | واحد" type="password"
+                                       className="form-control"/>
+                                <input style={{
+                                    border: 'none',
+                                    direction: 'rtl',
+                                    fontFamily: 'IRANSans',
+                                    fontSize: '12px',
+                                    outline: '0'
+                                }}
+                                       placeholder="شماره اضطراری" type="password"
+                                       className="form-control" id="pwd"/>
+                                <button className="btn btn-success">ثبت سفارش</button>
+                            </div>
                         </div>
                     </div>
                 </div>

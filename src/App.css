@@ -1,18 +1,29 @@
 
-.row{
+html{
+    background-color:#e9c054 ;
+}
+.row {
     background-color: #e9c054;
-   padding-top: 10%;
-    padding-bottom: 5%;
+    padding-top: 5%;
+    padding-bottom: 2%;
 
 }
 
-#Login{
+#Login {
     padding-top: 5%;
 
 }
-#mainLogin{
+
+#mainLogin {
     padding-top: 3%;
     padding-bottom: 2%;
 
     background-color: snow;
+}
+
+.Header-parent{
+    direction: rtl;
+}
+.container-fluid{
+    background-color:#e9c054 ;
 }
